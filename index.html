@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hareesh Raam S – Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+/* Burgundy & Rose Gold theme */
+
+:root {
+  --burgundy: #6d1a2b;
+  --burgundy-deep: #4a0f1c;
+  --burgundy-soft: #8e2a3d;
+  --rose-gold: #b76e79;
+  --rose-gold-light: #e8c4b8;
+  --rose-gold-pale: #f7e6e0;
+  --cream: #fdf8f6;
+  --ink: #3b2226;
+  --muted: #7a5c60;
+  --white: #ffffff;
+  --radius: 12px;
+  --shadow: 0 6px 20px rgba(109, 26, 43, 0.12);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top right, var(--rose-gold-pale), transparent 45%),
+    var(--cream);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--burgundy);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--rose-gold);
+}
+
+h1, h2, h3 {
+  color: var(--burgundy-deep);
+  line-height: 1.25;
+  margin: 0 0 0.5rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 3px;
+  margin-top: 0.5rem;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--rose-gold), var(--burgundy));
+}
+
+/* ---------- Navigation ---------- */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 2rem;
+  background: var(--burgundy-deep);
+  border-bottom: 2px solid var(--rose-gold);
+  box-shadow: 0 2px 12px rgba(74, 15, 28, 0.25);
+}
+
+.nav-brand {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--rose-gold-light);
+}
+
+.nav-brand:hover {
+  color: var(--white);
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  color: var(--rose-gold-light);
+  font-size: 0.95rem;
+  padding: 0.3rem 0;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--white);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: var(--rose-gold);
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-cta {
+  padding: 0.45rem 1.1rem;
+  border: 1px solid var(--rose-gold);
+  border-radius: 999px;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--rose-gold), var(--burgundy-soft));
+}
+
+.nav-cta:hover {
+  color: var(--white);
+  background: linear-gradient(135deg, var(--burgundy-soft), var(--rose-gold));
+}
+
+.nav-cta::after {
+  display: none;
+}
+
+/* ---------- Layout ---------- */
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+
+section {
+  padding: 3.5rem 0 1rem;
+}
+
+/* ---------- Hero ---------- */
+
+#hero {
+  text-align: center;
+  padding-top: 5rem;
+}
+
+#hero h1 {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: clamp(2.4rem, 6vw, 3.8rem);
+  background: linear-gradient(135deg, var(--burgundy) 0%, var(--rose-gold) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+}
+
+.lead {
+  max-width: 640px;
+  margin: 0 auto 2rem;
+  font-size: 1.15rem;
+  color: var(--muted);
+}
+
+/* ---------- Buttons ---------- */
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.9rem;
+  margin-top: 1.5rem;
+}
+
+.button,
+.download {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  border: 2px solid var(--burgundy);
+  border-radius: 999px;
+  background: var(--burgundy);
+  color: var(--white);
+  font-weight: 600;
+  font-size: 0.97rem;
+  box-shadow: 0 4px 14px rgba(109, 26, 43, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.button:hover,
+.download:hover {
+  color: var(--white);
+  background: var(--burgundy-soft);
+  border-color: var(--burgundy-soft);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(109, 26, 43, 0.3);
+}
+
+.button-outline {
+  background: transparent;
+  color: var(--burgundy);
+  box-shadow: none;
+}
+
+.button-outline:hover {
+  background: var(--rose-gold-pale);
+  color: var(--burgundy-deep);
+  border-color: var(--rose-gold);
+}
+
+.button:focus-visible,
+.download:focus-visible,
+.nav-link:focus-visible,
+.nav-brand:focus-visible {
+  outline: 3px solid var(--rose-gold);
+  outline-offset: 3px;
+}
+
+/* ---------- Cards ---------- */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  position: relative;
+  padding: 1.6rem 1.5rem 1.5rem;
+  background: var(--white);
+  border: 1px solid var(--rose-gold-light);
+  border-top: 4px solid var(--rose-gold);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(109, 26, 43, 0.18);
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  color: var(--burgundy);
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* ---------- Resume sheet ---------- */
+
+#resume {
+  padding-bottom: 2rem;
+}
+
+#resume .download {
+  display: table;
+  margin: 0 auto 2rem;
+}
+
+.sheet {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 3.2rem;
+  background: var(--white);
+  border-radius: var(--radius);
+  border: 1px solid var(--rose-gold-light);
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.sheet::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: linear-gradient(90deg, var(--burgundy-deep), var(--burgundy), var(--rose-gold));
+}
+
+.sheet h3 {
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--burgundy);
+  margin-top: 1.8rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--rose-gold-light);
+}
+
+.sheet h3:first-child {
+  margin-top: 0;
+}
+
+.sheet p,
+.sheet li {
+  color: var(--ink);
+  font-size: 0.97rem;
+}
+
+.sheet ul {
+  padding-left: 1.2rem;
+  margin: 0.5rem 0 0;
+}
+
+.sheet li::marker {
+  color: var(--rose-gold);
+}
+
+.sheet-name {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 2rem;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--burgundy-deep);
+  border: none;
+  margin: 0 0 0.3rem;
+  padding: 0;
+}
+
+.sheet-contact {
+  color: var(--rose-gold) !important;
+  font-weight: 600;
+  margin-bottom: 0.5rem !important;
+}
+
+/* ---------- Contact section ---------- */
+
+#contact {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  background: linear-gradient(135deg, var(--burgundy-deep), var(--burgundy) 60%, var(--burgundy-soft));
+  color: var(--rose-gold-light);
+  box-shadow: var(--shadow);
+}
+
+#contact h2 {
+  color: var(--white);
+}
+
+#contact h2::after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#contact p a {
+  color: var(--rose-gold-light);
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-bottom: 1px dashed var(--rose-gold);
+}
+
+#contact p a:hover {
+  color: var(--white);
+}
+
+#contact .button {
+  background: var(--rose-gold);
+  border-color: var(--rose-gold);
+  color: var(--burgundy-deep);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+#contact .button:hover {
+  background: var(--rose-gold-light);
+  border-color: var(--rose-gold-light);
+  color: var(--burgundy-deep);
+}
+
+#contact .button-outline {
+  background: transparent;
+  color: var(--white);
+  border-color: var(--rose-gold-light);
+}
+
+#contact .button-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  border-color: var(--white);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 720px) {
+  .nav {
+    padding: 0.8rem 1.2rem;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .nav-links {
+    justify-content: center;
+    gap: 0.9rem;
+  }
+
+  .sheet {
+    padding: 2rem 1.5rem;
+  }
+
+  #hero {
+    padding-top: 3rem;
+  }
+}
+
+/* ---------- Print: show only the resume sheet cleanly ---------- */
+
+@media print {
+  body {
+    background: var(--white);
+  }
+
+  .nav,
+  #hero,
+  #highlights,
+  #contact,
+  .screen-only {
+    display: none !important;
+  }
+
+  .sheet {
+    border: none;
+    box-shadow: none;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .sheet::before {
+    height: 4px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <a class="nav-brand" href="#hero">Hareesh Raam S</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a class="nav-link" href="#highlights">Education and achievements</a></li>
+        <li><a class="nav-link" href="#resume">Resume</a></li>
+        <li><a class="nav-link nav-cta" href="mailto:camhareesh@gmail.com?subject=Internship%20opportunity">Email me</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero">
+      <h1>Hareesh Raam S</h1>
+      <p class="lead">I’m a first-year BBA DBE student at IIM Bangalore, looking for an internship in startup finance and digital marketing.</p>
+      <div class="actions">
+        <a class="button" href="mailto:camhareesh@gmail.com?subject=Internship%20opportunity">Email me about an internship</a>
+        <a class="button button-outline" href="https://www.linkedin.com/in/hareesh-raam-8730343a7" target="_blank" rel="noopener">LinkedIn profile</a>
+      </div>
+    </section>
+
+    <section id="highlights">
+      <h2>Education and achievements</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>IIM Bangalore</h3>
+          <p>BBA DBE, first year</p>
+        </article>
+        <article class="card">
+          <h3>Chinmaya Vidyalaya, Tirunelveli</h3>
+          <p>School</p>
+        </article>
+        <article class="card">
+          <h3>District table tennis</h3>
+          <p>Won singles and doubles in the under-17 (2023) and under-19 (2024) categories at the Tirunelveli district level.</p>
+        </article>
+        <article class="card">
+          <h3>Member, Green Club</h3>
+          <p>Organises and plants trees around schools and my locality.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="resume">
+      <h2 class="screen-only">Resume</h2>
+      <a class="download screen-only" href="resume.pdf" download>Download my resume (PDF)</a>
+      <article class="sheet">
+        <h3 class="sheet-name">Hareesh Raam S</h3>
+        <p class="sheet-contact">camhareesh@gmail.com · linkedin.com/in/hareesh-raam-8730343a7</p>
+
+        <h3>Profile</h3>
+        <p>I’m a first-year BBA DBE student at IIM Bangalore, looking for an internship in startup finance and digital marketing.</p>
+
+        <h3>Education</h3>
+        <ul>
+          <li>IIM Bangalore, BBA DBE, first year</li>
+          <li>Chinmaya Vidyalaya, Tirunelveli</li>
+        </ul>
+
+        <h3>Achievements</h3>
+        <ul>
+          <li>District table tennis, Tirunelveli: singles and doubles winner, under-17 (2023)</li>
+          <li>District table tennis, Tirunelveli: singles and doubles winner, under-19 (2024)</li>
+        </ul>
+
+        <h3>Activities</h3>
+        <ul>
+          <li>Member, Green Club. Organises and plants trees around schools and my locality.</li>
+        </ul>
+
+        <h3>Skills</h3>
+        <p>Critical thinking, problem solving, strategic thinking, decision making, time management, personal finance management, entrepreneurial mindset.</p>
+      </article>
+    </section>
+
+    <section id="contact">
+      <h2>Get in touch</h2>
+      <p><a href="mailto:camhareesh@gmail.com">camhareesh@gmail.com</a></p>
+      <div class="actions">
+        <a class="button" href="mailto:camhareesh@gmail.com?subject=Internship%20opportunity">Email me about an internship</a>
+        <a class="button" href="mailto:camhareesh@gmail.com?subject=Let%27s%20collaborate">Email me to collaborate</a>
+        <a class="button button-outline" href="https://www.linkedin.com/in/hareesh-raam-8730343a7" target="_blank" rel="noopener">LinkedIn profile</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
